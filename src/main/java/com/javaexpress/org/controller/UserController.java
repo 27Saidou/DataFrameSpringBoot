@@ -42,5 +42,9 @@ public class UserController {
 	public void deleteUser(@PathVariable(name = "id")Long id) {
 		userService.deleteUser(id);
 	}
+	@GetMapping("/")
+	public String home() {
+		return "hello world!";
+	}
 	
 }
