@@ -18,6 +18,8 @@ import com.javaexpress.org.model.User;
 import com.javaexpress.org.service.UserService;
 
 
+
+
 @RestController
 @RequestMapping(value = "/api/v1")
 public class UserController {
@@ -40,4 +42,5 @@ public class UserController {
 	public void deleteUser(@PathVariable(name = "id")Long id) {
 		userService.deleteUser(id);
 	}
+	
 }
