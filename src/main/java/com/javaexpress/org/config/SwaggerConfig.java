@@ -26,6 +26,8 @@ public class SwaggerConfig {
 	     
 	}
 	private ApiInfo apiInfo() {
-		return new ApiInfo("Employee Project", "Employee Information for CRUD Operations", "4.0.0","www.example.com",new Contact("Saidou diallo", "www.example.com", "myeaddress@company.com"),"Apache2", "www.example.com",Collections.EMPTY_LIST);
+		return new ApiInfo("Employee Project", "Employee Information for CRUD Operations",
+				"4.0.0","www.example.com",new Contact("Saidou diallo", "www.example.com", "myeaddress@company.com"),"Apache2", 
+				"www.example.com",Collections.EMPTY_LIST);
 	}
 }
