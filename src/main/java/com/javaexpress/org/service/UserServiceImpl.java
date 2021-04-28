@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.javaexpress.org.model.User;
 import com.javaexpress.org.repo.UserRepository;
+import com.web.exception.UserNotFoundException;
 @Service
 public class UserServiceImpl implements UserService {
 	@Autowired
@@ -41,6 +42,14 @@ private UserRepository userRepo;
 		List<User>user=new ArrayList<>();
 		userRepo.findAll().forEach(user1->user.add(user1));
 		return user;
+	}
+	@Override
+	public User getUser(Long id) {
+		Optional<User>optionalUser=userRepo.findById(id);
+		if(!optionalUser.isPresent()) {
+			throw new UserNotFoundException("l'utilisateur n'est pas disponible en ce moment");
+		}
+		return optionalUser.get();
 	}
 	
 
